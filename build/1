@@ -1,0 +1,22 @@
+version: '3'
+    
+services:
+  cronjobs:
+    build:
+      context: .
+      dockerfile: docker-cronjob
+    volumes:
+      - /mnt:/mnt
+      - /share:/share
+  jenkins:
+    build:
+      context: .
+      dockerfile: docker-jenkins
+    ports:
+      - '8080:8080'
+    volumes:
+      - /share/jenkins-code:/var/jenkins_home
+
+
+
+      
