@@ -24,6 +24,16 @@ services:
       dockerfile: docker-python
     ports:
       - "2222:22"
+    volumes:
+      - "/mnt:/share/apache"
+  apache:
+    image: httpd
+    ports:
+      - "80:80"
+    volumes:
+      - "/share/apache:/usr/local/apache2/htdocs"
+  
+  
 
 
       
