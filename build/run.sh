@@ -18,5 +18,9 @@ sleep 20
 
 docker-compose up -d jenkins
 
+sleep 20
+
+docker-compose up -d apache
+
 
 
