@@ -20,7 +20,10 @@ docker-compose up -d jenkins
 
 sleep 20
 
+mkdir -p /share/apache && chmod 777  /share/apache
+
 docker-compose up -d apache
+
 
 
 
