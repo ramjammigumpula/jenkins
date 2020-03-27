@@ -3,6 +3,7 @@ FROM ramjammigumpula/python:v1
 LABEL env="python" \
       family="jenkins"
 
+ENV  PATH="/usr/local/bin:/java/bin:$PATH"
 
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile \
