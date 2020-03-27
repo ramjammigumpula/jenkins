@@ -1,8 +1,13 @@
 FROM ramjammigumpula/python:v1
 
+LABEL env="python" \
+      family="jenkins"
+
 
 ENV NOTVISIBLE "in users profile"
-RUN echo "export VISIBLE=now" >> /etc/profile
+RUN echo "export VISIBLE=now" >> /etc/profile \
+    && apt-get update \
+    && apt-get install git -y
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
