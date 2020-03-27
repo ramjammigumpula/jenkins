@@ -16,7 +16,14 @@ services:
       - '8080:8080'
     volumes:
       - /share/jenkins-code:/var/jenkins_home
-
+    links:
+      - "python"
+  python:
+    build:
+      context: .
+      dockerfile: docker-python
+    ports:
+      - "2222:22"
 
 
       
