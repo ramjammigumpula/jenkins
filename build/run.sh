@@ -1,3 +1,9 @@
+( rpm -q docker-ce ) ||
+	{
+	curl -s https://raw.githubusercontent.com/ramjammigumpula/ansible-docker/master/plays | bash
+	}
+
+
 ( rpm -q git ) || yum install git -y
 
 git clone https://github.com/ramjammigumpula/jenkins.git
